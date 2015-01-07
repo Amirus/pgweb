@@ -3,9 +3,38 @@ package main
 import (
 	"errors"
 	"fmt"
-	"os/user"
+	"os"
+	"os/exec"
+	"runtime"
 	"strings"
 )
+
+func currentUserUnix() (string, error) {
+	buff, err := exec.Command("sh", "-c", "eval echo $USER").Output()
+	if err != nil {
+		return "", err
+	}
+
+	return strings.TrimSpace(string(buff)), nil
+}
+
+func currentUserWindows() (string, error) {
+	user := os.Getenv("USERPROFILE")
+
+	if user != "" {
+		return user, nil
+	}
+
+	return "", errors.New("USERPROFILE is not defined")
+}
+
+func currentUser() (string, error) {
+	if runtime.GOOS == "windows" {
+		return currentUserWindows()
+	}
+
+	return currentUserUnix()
+}
 
 func formatConnectionUrl(opts Options) (string, error) {
 	url := opts.Url
@@ -45,12 +74,13 @@ func buildConnectionString(opts Options) (string, error) {
 	}
 
 	// Try to detect user from current OS user
-	// TODO: remove os/user dependency
 	if opts.User == "" {
-		user, err := user.Current()
+		user, err := currentUser()
 
 		if err == nil {
-			opts.User = user.Username
+			opts.User = user
+		} else {
+			fmt.Println("Failed to detect OS user:", err)
 		}
 	}
 
