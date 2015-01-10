@@ -3,7 +3,7 @@ package main
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"github.com/sosedoff/pgweb/Godeps/_workspace/src/github.com/stretchr/testify/assert"
 )
 
 func Test_assetContentType(t *testing.T) {

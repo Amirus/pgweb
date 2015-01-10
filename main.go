@@ -6,9 +6,9 @@ import (
 	"os/exec"
 	"os/signal"
 
-	"github.com/gin-gonic/gin"
-	"github.com/jessevdk/go-flags"
-	_ "github.com/lib/pq"
+	"github.com/sosedoff/pgweb/Godeps/_workspace/src/github.com/gin-gonic/gin"
+	"github.com/sosedoff/pgweb/Godeps/_workspace/src/github.com/jessevdk/go-flags"
+	_ "github.com/sosedoff/pgweb/Godeps/_workspace/src/github.com/lib/pq"
 )
 
 const VERSION = "0.4.1"

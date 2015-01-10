@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/jmoiron/sqlx"
+	"github.com/sosedoff/pgweb/Godeps/_workspace/src/github.com/jmoiron/sqlx"
 )
 
 type Client struct {

@@ -1,10 +1,9 @@
 package pq
 
 import (
-	"github.com/lib/pq/oid"
-
 	"bytes"
 	"fmt"
+	"github.com/sosedoff/pgweb/Godeps/_workspace/src/github.com/lib/pq/oid"
 	"testing"
 	"time"
 )

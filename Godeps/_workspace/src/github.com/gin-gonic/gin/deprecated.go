@@ -5,7 +5,7 @@
 package gin
 
 import (
-	"github.com/gin-gonic/gin/binding"
+	"github.com/sosedoff/pgweb/Godeps/_workspace/src/github.com/gin-gonic/gin/binding"
 	"net/http"
 )
 

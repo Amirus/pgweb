@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/gin-gonic/gin"
+	"github.com/sosedoff/pgweb/Godeps/_workspace/src/github.com/gin-gonic/gin"
 )
 
 var extraMimeTypes = map[string]string{

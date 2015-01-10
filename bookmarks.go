@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/BurntSushi/toml"
-	"github.com/mitchellh/go-homedir"
+	"github.com/sosedoff/pgweb/Godeps/_workspace/src/github.com/BurntSushi/toml"
+	"github.com/sosedoff/pgweb/Godeps/_workspace/src/github.com/mitchellh/go-homedir"
 )
 
 type Bookmark struct {

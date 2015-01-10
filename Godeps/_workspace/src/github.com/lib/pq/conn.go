@@ -10,7 +10,7 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	"github.com/lib/pq/oid"
+	"github.com/sosedoff/pgweb/Godeps/_workspace/src/github.com/lib/pq/oid"
 	"io"
 	"io/ioutil"
 	"net"
